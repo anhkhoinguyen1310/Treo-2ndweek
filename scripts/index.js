@@ -3,7 +3,7 @@ console.log('Hello JS!')
 
 function changeFirstBox() {
   console.log('Change My first Box Treo March 30')
-  document.getElementById("change-text").innerHTML = "Treo Change Text!";
+  document.getElementById("change-text").innerHTML = "Change the text!!!!";
 }
 
 setTimeout(changeFirstBox, 3000);
