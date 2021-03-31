@@ -90,3 +90,20 @@ function resize() {
 window.onresize = resize;
 
 
+//Add li 
+var length = 0;
+document.getElementById("add-list-item").addEventListener("click", () => 
+{
+length++;
+var addLi = document.createElement("li")
+var addText = document.createTextNode(length + "new Li added ");
+addLi.appendChild(addText);
+var element = document.getElementById("add-list-item").appendChild(addLi);
+});
+
+//show URL 
+function showURL()
+{
+  document.getElementById("change-to-url").innerHTML= "www.google.com"
+}
+document.getElementById("change-to-url").addEventListener("click",showURL);
