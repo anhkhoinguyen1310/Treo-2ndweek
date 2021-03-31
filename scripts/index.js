@@ -16,7 +16,6 @@ function changeSecondBox() {
   document.getElementById("change-count").innerHTML = count;
 }
 
- 
 
 setInterval(changeSecondBox, 1000);
 
@@ -26,6 +25,11 @@ function incrementOnClick() {
   clickCount++
   document.getElementById("change-click").innerHTML = clickCount;
 }
+document
+  .getElementById("change-click")
+  .addEventListener("click", incrementOnClick);
+
+
 function changetheDate() {
   document.getElementById("change-to-current-date").innerHTML = changedate;
 
@@ -45,8 +49,37 @@ document.getElementById("change-hover").addEventListener("mouseover", () => {
   hoverCount++;
   document.getElementById("change-hover").innerHTML = hoverCount;
 });
+// Toggle he loves me
+let loveMe = 0;
 
-document
-  .getElementById("change-click")
-  .addEventListener("click", incrementOnClick);
+document.getElementById("change-he-loves-me").addEventListener("click", () => {
+  loveMe++;
+  if (loveMe%2)
+  document.getElementById("change-he-loves-me").innerHTML = "He loves Me";
+  else
+  document.getElementById("change-he-loves-me").innerHTML = "He Loves Me not";
+})
+
+
+//changed date
+
+function displayDate() {
+    var date = new Date();
+    var hours = date.getHours();
+    var days = date.getDay(); 
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = date + ' ' + hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}
+
+document.getElementById("change-to-current-date").addEventListener("click",() => {
+document.getElementById("change-to-current-date").innerHTML = displayDate();
+});
+
+//Resize
+
 
