@@ -80,6 +80,13 @@ document.getElementById("change-to-current-date").addEventListener("click",() =>
 document.getElementById("change-to-current-date").innerHTML = displayDate();
 });
 
-//Resize
+//Resize 
+function resize() {
+  var w = window.outerWidth;
+  var h = window.outerHeight;
+  document.getElementById("change-to-current-width").innerHTML = "Width:" + w;
+  document.getElementById("change-to-current-height").innerHTML = "Height:" +h;
+}
+window.onresize = resize;
 
 
